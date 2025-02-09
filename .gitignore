@@ -1,9 +1,8 @@
-# heavy files 
+# heavy files
 local/
 rust/
 nix/
 omz/
-
 
 cache/
 log/
@@ -14,4 +13,3 @@ log/
 .idea
 
 *.zwc
-
