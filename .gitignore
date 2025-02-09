@@ -1,0 +1,15 @@
+# heavy files 
+local/
+rust/
+nix/
+
+cache/
+log/
+#.swp
+.DS_Store
+
+.vscode
+.idea
+
+*.zwc
+
