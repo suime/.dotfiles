@@ -2,6 +2,8 @@
 local/
 rust/
 nix/
+omz/
+
 
 cache/
 log/
