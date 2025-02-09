@@ -10,6 +10,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 
+zinit light junegunn/fzf
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -17,7 +18,8 @@ zinit light Aloxaf/fzf-tab
 
 # History
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.dotfiles/zsh/.zsh_history
+
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -33,8 +35,16 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color $realpath'
+
+# Add in snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+
+# autoload -Uz compinit && compinit
+# zinit cdreplay -q
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/gcc:$HOME/.nix-profile/bin:$PATH
 export fpath=($HOME/.dotfiles/zsh:$fpath)
@@ -78,14 +88,10 @@ function davclean() {
     echo "모든 지정된 폴더 삭제 완료!"
 }
 
-
 plugins=(
     git
     zsh-navigation-tools
     zsh-interactive-cd
-    fzf
-    zsh-syntax-highlighting
-    zsh-autosuggestions
     zoxide
     zsh-hangul
  )
@@ -137,7 +143,7 @@ alias ld="eza -l --icons=always --hyperlink -a -D -h --no-permissions --no-user 
 alias lf="eza -l --icons=always --hyperlink -a -f -h --no-permissions --no-user --time-style='+%Y.%m.%d %H:%M'"
 alias lt="eza -T --icons=always --hyperlink --level=2"
 
-export FZF_BASE="~/.oh-my-zsh"
+
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
@@ -162,6 +168,4 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.oh-my-zsh/.p10k.zsh ]] || source ~/.oh-my-zsh/.p10k.zsh
 [ -f ~/.oh-my-zsh/.fzf.zsh ] && source ~/.oh-my-zsh/.fzf.zsh
 
-source /var/services/homes/qkqxk500/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /var/services/homes/qkqxk500/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # eval "$(zoxide init zsh)"

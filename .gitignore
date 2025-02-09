@@ -3,6 +3,10 @@ local/
 rust/
 nix/
 omz/
+api/
+cargo/
+mail/
+cursor/
 
 cache/
 log/
@@ -11,5 +15,6 @@ log/
 
 .vscode
 .idea
-
+*_history
 *.zwc
+*.zcompdump
