@@ -20,9 +20,9 @@ function ai_hub() {
         ;;
     download)
         if [[ -n "$3" ]]; then
-            aihubshell -mode d -datasetkey $2 -filekey $3 -aihubid 'qkqxk600@gmail.com' -aihubpw 'dhkfndlwl!23'
+            aihubshell -mode d -datasetkey $2 -filekey $3 -aihubid $aihub_id -aihubpw $aihub_passwd
         else
-            aihubshell -mode d -datasetkey $2 -aihubid 'qkqxk600@gmail.com' -aihubpw 'dhkfndlwl!23'
+            aihubshell -mode d -datasetkey $2 -aihubid $aihub_id -aihubpw $aihub_passwd
         fi
         ;;
     *)

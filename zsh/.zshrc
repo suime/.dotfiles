@@ -45,9 +45,10 @@ zinit snippet OMZP::sudo
 
 # autoload -Uz compinit && compinit
 # zinit cdreplay -q
+source $HOME/.dotfiles/api/passwd.zsh
 
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/gcc:$HOME/.nix-profile/bin:$PATH
-export fpath=($HOME/.dotfiles/zsh:$fpath)
+export fpath=($HOME/.dotfiles/func:$fpath)
 export LC_ALL=ko_KR.UTF-8
 
 # Path to your Oh My Zsh installation.
