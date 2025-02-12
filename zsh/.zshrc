@@ -107,6 +107,7 @@ alias ohmyzsh="cd ~/.oh-my-zsh"
 alias cls="clear"
 alias re="source ~/.zshrc"
 alias ep="vim ~/.zshrc"
+alias et="vim ~/.tmux.conf"
 
 # 파이썬 관련 
 alias python="/usr/local/bin/python3.10"
@@ -122,8 +123,20 @@ alias cd-data="cd /volume1/homes/박진수/DB\ 폴더"
 alias fd="fd -E '*@eaDir*' -H"
 # alias fd="fd"
 
+# tmux 관련 
+alias tm="tmux"
+alias ta="tmux attach-session -t" # 특정 세션 접속
+alias tam="tmux attach-session -t main" # 메인 세션 접속
+alias tk="tmux kill-session -t" # 특정 세션 삭제
+
+
 # yazi
 alias yz="yazi"
+
+# yt-dlp
+alias yt="yt-dlp"
+# yt -F url <= list 
+# yt -f 248+123 <= 옵션 선택 
 
 # nix 
 function nix_install(){
