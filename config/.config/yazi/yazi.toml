@@ -1,6 +1,7 @@
 [manager]
 show_hidden = true
 sort_dir_first = true 
+sort_by = "natural"
 linemode = "size"
 show_symlink = true
 moust_events = "click_and_scroll_move_drag"

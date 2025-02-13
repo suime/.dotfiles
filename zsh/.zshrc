@@ -101,13 +101,15 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-# Example aliases
+# 
 alias zshconfig="cd ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias cls="clear"
 alias re="source ~/.zshrc"
 alias ep="vim ~/.zshrc"
 alias et="vim ~/.tmux.conf"
+# alias et="vim ~/.tmux.conf"
+
 
 # 파이썬 관련 
 alias python="/usr/local/bin/python3.10"
@@ -145,10 +147,13 @@ function nix_install(){
 function nix_search(){
     nix --extra-experimental-features "nix-command flakes" search nixpkgs $1
 }
+
 alias nix="nix --extra-experimental-features nix-command --extra-experimental-features flakes"
 alias ni="nix_install"
 alias ns="nix_search"
+
 bindkey '^[l' .clear-screen
+
 # eza 
 alias ls="eza --icons=always --hyperlink -w=80 --ignore-glob=@eaDir"
 alias ll="eza -l --icons=always --hyperlink -a -h --no-permissions --no-user --ignore-glob=@eaDir \
